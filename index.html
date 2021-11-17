@@ -11,16 +11,28 @@
         <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
       </section>
       <show-hello name="John"></show-hello>
+      <show-fuga name="bar"></show-fuga>
   </body>
 </html>
 
 <script>
   customElements.define('show-hello', class extends HTMLElement {
     connectedCallback() {
-      const shadow = this.attachShadow({mode: 'closed'});
+      const shadow = this.attachShadow({mode: 'open'});
       shadow.innerHTML = `<p id='hoges'>
         Hello!!, ${this.getAttribute('name')}
       </p>`;
     }
   });
   </script>
+<script>
+  customElements.define('show-fuga', class extends HTMLElement {
+    connectedCallback() {
+      const shadow = this.attachShadow({mode: 'open'});
+      shadow.innerHTML = `<p id='hoges'>
+        FUGA!!, ${this.getAttribute('name')}
+      </p>`;
+    }
+  });
+  </script>
+
