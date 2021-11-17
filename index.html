@@ -29,7 +29,7 @@
   customElements.define('show-fuga', class extends HTMLElement {
     connectedCallback() {
       const shadow = this.attachShadow({mode: 'open'});
-      shadow.innerHTML = `<p id='hoges'>
+      shadow.innerHTML = `<p id='fugas'>
         FUGA!!, ${this.getAttribute('name')}
       </p>`;
     }
